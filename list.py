@@ -1,4 +1,4 @@
-from double_linked_list import DLLNode
+from node import DLLNode
 
 class DLinkedList:
     def __init__(self):
@@ -23,7 +23,7 @@ class DLinkedList:
         node = self.first_node
 
         if position < 0 or position >= self.size:
-            raise ValueError(f"El índice es inválido ({position}).")
+            raise ValueError(f"The index is invalid ({position}).")
         
         if position == self.size - 1:
             return self.last_node
@@ -36,7 +36,7 @@ class DLinkedList:
         node = DLLNode(new_data)
 
         if position < 0 or position >= self.size:
-            raise ValueError(f"El índice es inválido ({position}).")
+            raise ValueError(f"The index is invalid ({position}).")
         else:
             current_node = self.get(position)
             current_node.insert_before(node)
@@ -48,10 +48,10 @@ class DLinkedList:
 
     def remove_at(self, position):
         if position < 0 or position >= self.size:
-            raise ValueError(f"El índice es inválido ({position}).")
+            raise ValueError(f"The index is invalid ({position}).")
         
         if self.first_node is None:
-            raise ValueError("La lista está vacia.")
+            raise ValueError("The list is empty.")
 
         if position == 0:
             self.first_node.next_node.prev_node = None
