@@ -28,14 +28,14 @@ class DLLNode:
     
     def remove_before(self):
         if self.prev_node is None:
-            raise ValueError("No hay un nodo previo que eliminar.")
+            raise ValueError("There is no previous node to remove.")
         else:
             self.prev_node.prev_node.next_node = self
             self.prev_node = self.prev_node.prev_node       
 
     def remove_after(self):
         if self.next_node is None:
-            raise ValueError("No hay un siguiente nodo que eliminar.")
+            raise ValueError("There is no next node to delete.")
         else:
             self.next_node.next_node.prev_node = self
             self.next_node = self.next_node.next_node
