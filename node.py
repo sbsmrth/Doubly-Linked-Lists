@@ -35,7 +35,10 @@ class DLLNode:
 
     def remove_after(self):
         if self.next_node is None:
-            raise ValueError("There is no next node to delete.")
+            raise ValueError("There is no next node to remove.")
+        elif self.next_node.next_node == None:
+            self.next_node.prev_node = None
+            self.next_node = None
         else:
             self.next_node.next_node.prev_node = self
             self.next_node = self.next_node.next_node
